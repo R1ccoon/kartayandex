@@ -46,7 +46,7 @@ def show_map(ll_spn=None, map_type="map", add_params=None):
             if event.type == pygame.QUIT:
                 running = False
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_PAGEUP and spn[0] < 0.005:
+                if event.key == pygame.K_PAGEUP and spn[0] < 16.1:
                     spns = f"{spn[0] + 0.001},{spn[1] + 0.001}"
                     spn = spn[0] + 0.001, spn[1] + 0.001
 
