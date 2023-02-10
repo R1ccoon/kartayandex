@@ -46,13 +46,13 @@ def show_map(ll_spn=None, map_type="map", add_params=None):
             if event.type == pygame.QUIT:
                 running = False
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_PAGEUP and spn[0] < 16.1:
-                    spns = f"{spn[0] + 0.001},{spn[1] + 0.001}"
-                    spn = spn[0] + 0.001, spn[1] + 0.001
+                if event.key == pygame.K_PAGEUP and spn[0] < 100.1:
+                    spns = f"{spn[0] * 2},{spn[1] * 2}"
+                    spn = spn[0] * 2, spn[1] * 2
 
                 elif event.key == pygame.K_PAGEDOWN and spn[0] > 0.003:
-                    spns = f"{spn[0] - 0.001},{spn[1] - 0.001}"
-                    spn = spn[0] - 0.001, spn[1] - 0.001
+                    spns = f"{spn[0] / 2},{spn[1] / 2}"
+                    spn = spn[0] / 2, spn[1] / 2
         ll = "32.012103,59.45837"
         ll_spn = f"ll={ll}&spn={spns}"
         map_request = f"http://static-maps.yandex.ru/1.x/?{ll_spn}&l={map_type}"
